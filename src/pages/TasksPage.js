@@ -86,8 +86,26 @@ export default function TasksPage() {
     const handleCreate = async (e) => {
         e.preventDefault();
         try {
-            await createTask(projectId, { title, description, dueDate: dueDate || null, status: "TODO", priority: "MEDIUM", labelIds: selectedLabelIds });
-        } catch (err) { console.error(err); }
+            const newTask = await createTask(projectId, {
+                title,
+                description,
+                dueDate: dueDate || null,
+                status: "TODO",
+                priority: "MEDIUM",
+                labelIds: selectedLabelIds
+            });
+            setTasks((prevTasks) => [...prevTasks, newTask]);
+
+            // Formu temizle
+            setTitle("");
+            setDescription("");
+            setDueDate("");
+            setSelectedLabelIds([]);
+
+        } catch (err) {
+            console.error(err);
+            alert("Görev eklenirken hata oluştu.");
+        }
     };
     const handleDeleteTask = async (id) => { if(window.confirm("Silinsin mi?")) { try { await deleteTask(id); setTasks(prev => prev.filter(t => t.id !== id)); } catch(e) {} } };
 
