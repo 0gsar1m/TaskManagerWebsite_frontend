@@ -7,6 +7,7 @@ import {
     Navigate,
 } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage"; // <--- YENİ EKLENDİ
 import ProjectsPage from "./pages/ProjectsPage";
 import TasksPage from "./pages/TasksPage";
 
@@ -25,7 +26,7 @@ function App() {
     const [user, setUser] = useState(null);
 
     const logout = () => {
-        setUser(null);        // context’ten kullanıcıyı düşürür
+        setUser(null);
     };
 
     return (
@@ -33,6 +34,8 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} /> {/* <--- YENİ EKLENDİ */}
+
                     <Route
                         path="/projects"
                         element={

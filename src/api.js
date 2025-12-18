@@ -19,6 +19,11 @@ export async function loginRequest(username, password) {
     const res = await api.post("/api/auth/login", { username, password });
     return res.data;
 }
+export async function registerRequest(username, email, password) {
+    // Backend DTO: { username, email, password } bekliyor
+    const res = await api.post("/api/auth/register", { username, email, password });
+    return res.data;
+}
 
 // -------- PROJECTS --------
 export async function fetchProjects() {
