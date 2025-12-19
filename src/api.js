@@ -1,9 +1,7 @@
 // src/api.js
 import axios from "axios";
 
-// 1. ADIM: Burayı Render adresinle (sonunda / olmadan) güncelle
-// Localhost'u || operatörü ile sona attık ki test ederken direkt Render'a gitsin.
-const API_BASE_URL = "https://taskmanagerwebsite-backend.onrender.com";
+const API_BASE_URL = "https://taskmanagerwebsite-backend.onrender.com || http://localhost:8080";
 // Eski hali şuydu: import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
 const api = axios.create({
