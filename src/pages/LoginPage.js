@@ -46,7 +46,7 @@ function LoginPage() {
                         <input
                             className="login-input"
                             type="text"
-                            placeholder="örn. emir2"
+                            placeholder="örn. username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             autoComplete="username"
@@ -91,10 +91,9 @@ function LoginPage() {
                 </form>
 
                 <div className="login-footer">
-                    <span>© 2025 MyTasks</span>
                     <span className="login-footer-sep">·</span>
                     <span>
-                        Test kullanıcısı: <code>emir2 / secret123</code>
+                        بسم الله الرحمن الرحيم
                     </span>
                 </div>
             </div>
